@@ -26,6 +26,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { SolutionItem, CategoryInfo } from '../crawler/types.ts';
+import { PricingDistributionWidget } from './PricingDistributionWidget.tsx';
 
 interface TrendsDashboardProps {
   solutions: SolutionItem[];
@@ -241,6 +242,16 @@ export const TrendsDashboard: React.FC<TrendsDashboardProps> = ({
         </div>
       </div>
 
+      {/* Pricing Distribution & Cost-Effectiveness Analyzer Widget */}
+      <PricingDistributionWidget
+        solutions={solutions}
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onSelectCategory={onSelectCategory}
+        onSelectSubcategory={onSelectSubcategory}
+        onSwitchToTable={onSwitchToTable}
+      />
+
       {/* Main Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Chart 1: Solution Volume & AI Adoption by Category */}
@@ -417,7 +428,7 @@ export const TrendsDashboard: React.FC<TrendsDashboardProps> = ({
                   content={({ active, payload }) => {
                     if (active && payload && payload.length) {
                       const data = payload[0].payload;
-                      const pct = Math.round((data.count / totalCount) * 100);
+                      const pct = totalCount > 0 ? Math.round((data.count / totalCount) * 100) : 0;
                       return (
                         <div className="bg-slate-900 text-white p-3 rounded-xl text-xs shadow-xl border border-slate-800">
                           <p className="font-bold text-emerald-400 mb-1">{data.name}</p>

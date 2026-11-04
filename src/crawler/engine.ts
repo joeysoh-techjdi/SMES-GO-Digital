@@ -1,4 +1,4 @@
-import { CategoryInfo, SubcategoryInfo, SolutionItem, CrawlProgress } from './types.ts';
+import type { CategoryInfo, SubcategoryInfo, SolutionItem, CrawlProgress } from './types.ts';
 
 const BASE_URL = 'https://smesgodigital.gov.sg';
 const DEFAULT_CSRF = 'T6C+9iB49TLra4jEsMeSckDMNhQ=';

@@ -7,6 +7,7 @@ import { TrendsDashboard } from './components/TrendsDashboard.tsx';
 import { LiveCrawlModal } from './components/LiveCrawlModal.tsx';
 import { SolutionDetailModal } from './components/SolutionDetailModal.tsx';
 import { CrawlerCodeModal } from './components/CrawlerCodeModal.tsx';
+import { ErrorDetailsModal } from './components/ErrorDetailsModal.tsx';
 import { CategoryInfo, SolutionItem } from './crawler/types.ts';
 import initialSolutionsData from './data/solutions.json';
 import { Database, AlertTriangle, RefreshCw, BarChart2, Table } from 'lucide-react';
@@ -28,6 +29,7 @@ export default function App() {
 
   const [isCrawlModalOpen, setIsCrawlModalOpen] = useState(false);
   const [isCodeModalOpen, setIsCodeModalOpen] = useState(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
   const [selectedSolution, setSelectedSolution] = useState<SolutionItem | null>(null);
 
   const [isCrawling, setIsCrawling] = useState(false);
@@ -135,6 +137,7 @@ export default function App() {
         onToggleView={(view) => setActiveView(view)}
         onOpenCrawlModal={() => setIsCrawlModalOpen(true)}
         onOpenCodeModal={() => setIsCodeModalOpen(true)}
+        onOpenErrorModal={() => setIsErrorModalOpen(true)}
         onExportCsv={handleExportCsv}
         onCopyAllTsv={handleCopyAllTsv}
         copiedTsv={copiedTsv}
@@ -234,6 +237,11 @@ export default function App() {
       <CrawlerCodeModal
         isOpen={isCodeModalOpen}
         onClose={() => setIsCodeModalOpen(false)}
+      />
+
+      <ErrorDetailsModal
+        isOpen={isErrorModalOpen}
+        onClose={() => setIsErrorModalOpen(false)}
       />
     </div>
   );

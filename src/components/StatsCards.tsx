@@ -27,7 +27,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({ solutions, activeCategor
       <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-2xs hover:border-slate-300 transition-all">
         <div className="flex items-center justify-between">
           <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-            {activeCategory === 'all' ? 'Total Solutions' : `${activeCategory}`}
+            {activeCategory === 'all' ? 'Total' : `${activeCategory}`}
           </span>
           <span className="p-2 rounded-lg bg-rose-50 text-rose-600">
             <Layers className="w-4 h-4" />
@@ -62,7 +62,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({ solutions, activeCategor
         </div>
       </div>
 
-      <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-2xs hover:border-slate-300 transition-all">
+      <div className="bg-[#cade45] p-4 rounded-xl border border-slate-200/80 shadow-2xs hover:border-slate-300 transition-all">
         <div className="flex items-center justify-between">
           <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
             Grant Supported

@@ -22,6 +22,7 @@ interface HeaderProps {
   onToggleView: (view: 'table' | 'trends') => void;
   onOpenCrawlModal: () => void;
   onOpenCodeModal: () => void;
+  onOpenErrorModal: () => void;
   onExportCsv: () => void;
   onCopyAllTsv: () => void;
   copiedTsv: boolean;
@@ -37,6 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleView,
   onOpenCrawlModal,
   onOpenCodeModal,
+  onOpenErrorModal,
   onExportCsv,
   onCopyAllTsv,
   copiedTsv
@@ -121,6 +123,14 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </button>
             </div>
+
+            <button
+              onClick={onOpenErrorModal}
+              className="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-xs font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 transition-colors shadow-2xs"
+              title="View error handling details and technical diagnostics"
+            >
+              <span>Error Details</span>
+            </button>
 
             <button
               onClick={onOpenCodeModal}
