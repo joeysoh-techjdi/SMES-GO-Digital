@@ -1,0 +1,6 @@
+{
+  "name": "SMEs Go Digital Solutions Crawler",
+  "description": "Automated crawler and data extraction engine for IMDA SMEs Go Digital Essential Business Solutions catalog across Sales & Marketing, HR, Operations, Cybersecurity, and Sustainability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
